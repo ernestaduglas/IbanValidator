@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Ernesta Duglas">
+<meta name="description" content="IBAN Validator">
+<title>IBAN Validator</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<h1>IBAN Validator</h1>
+				<div>
+				<p>Validate single IBAN entry</p>
+					<form method="POST">
+						<label>Please enter IBAN account number: </label><br /> <input
+							type="text" name="iban" />
+						<button type="submit" name="action" value="validateIban">Validate</button>
+					</form>
+				</div>
+				<p>OR</p>
+				<div>
+				<p>Validate multiple IBAN entries stored in text file</p>
+					<form method="POST">
+						<label>Please enter path to file (e.g. C:\Users\Documents\iban.txt): </label><br /> <input type="text" name="filename" />
+						<button type="submit" name="action" value="validateFile">Validate</button>
+					</form>
+				</div>
+				<div>
+				<p>Response: </p>
+				<p id= "response" th:text="${message}"/></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
